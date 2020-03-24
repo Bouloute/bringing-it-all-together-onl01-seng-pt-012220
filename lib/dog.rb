@@ -28,6 +28,10 @@ class Dog
   end
 
   def save
+    if @id
+      sql = "UPDATE dogs SET name = ?, breed = ?  WHERE id = ?"
+      DB[:conn].execute(sql, self.name, self.breed, self.id)
+    else
     sql = <<-SQL
       INSERT INTO dogs (id, name, breed) VALUES (?, ?, ?);
     SQL
