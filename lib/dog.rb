@@ -35,7 +35,7 @@ class Dog
       sql = <<-SQL
         INSERT INTO dogs (id, name, breed) VALUES (?, ?, ?);
       SQL
-
+      
       DB[:conn].execute(sql, @id, @name, @breed)
 
       sql = <<-SQL
@@ -71,7 +71,7 @@ class Dog
 
     #self.new(id: dog_data[0], name: dog_data[1], breed: dog_data[2])
     bob = self.new_from_db(dog_data)
-    binding.pry
+    #binding.pry
     bob
   end
 
