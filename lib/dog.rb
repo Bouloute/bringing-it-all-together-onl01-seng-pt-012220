@@ -50,7 +50,7 @@ class Dog
   end
 
   def self.new_from_db(row)
-binding.pry
+#binding.pry
     bob = self.create(id: row[0], name: row[1], breed: row[2])
   #  binding.pry
     bob
