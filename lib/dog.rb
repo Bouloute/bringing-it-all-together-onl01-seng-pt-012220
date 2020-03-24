@@ -45,7 +45,7 @@ binding.pry
     @id = DB[:conn].execute(sql)[0][0]
 end
     self
-    
+
   end
 
   def self.create(id: nil, name:, breed:)
