@@ -91,7 +91,7 @@ class Dog
     self.new_from_db(dog_row)
   end
 
-  def self.update
+  def update
     sql =<<-SQL
       UPDATE dogs
       SET name = ?, breed = ?
