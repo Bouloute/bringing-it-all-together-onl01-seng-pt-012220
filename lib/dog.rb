@@ -32,18 +32,18 @@ class Dog
       sql = "UPDATE dogs SET name = ?, breed = ?  WHERE id = ?"
       DB[:conn].execute(sql, self.name, self.breed, self.id)
     else
-    sql = <<-SQL
-      INSERT INTO dogs (id, name, breed) VALUES (?, ?, ?);
-    SQL
-binding.pry
-    DB[:conn].execute(sql, @id, @name, @breed)
+      sql = <<-SQL
+        INSERT INTO dogs (id, name, breed) VALUES (?, ?, ?);
+      SQL
+      
+      DB[:conn].execute(sql, @id, @name, @breed)
 
-    sql = <<-SQL
-      SELECT last_insert_rowid() FROM dogs;
-    SQL
+      sql = <<-SQL
+        SELECT last_insert_rowid() FROM dogs;
+      SQL
 
-    @id = DB[:conn].execute(sql)[0][0]
-end
+      @id = DB[:conn].execute(sql)[0][0]
+    end
     self
 
   end
